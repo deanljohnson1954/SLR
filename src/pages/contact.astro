@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactForm from '../components/ContactForm.astro';
 ---
 
 <BaseLayout title="Contact Us | Sonoma Lawyers Realty" description="Ready to find your Sonoma County home? Schedule a free 30-minute consultation with Dean L. Johnson. Call (760) 603-0022 or email us.">
@@ -8,41 +7,37 @@ import ContactForm from '../components/ContactForm.astro';
         <h2 class="section-title">Get Started</h2>
         <p class="section-subtitle">Ready to find your Sonoma County home? Let's discuss your needs and how we can help.</p>
 
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
+        <div class="contact-info" style="max-width: 600px; margin: 0 auto;">
+            <h3>Contact Information</h3>
 
-                <div class="contact-item">
-                    <div class="contact-item-icon">📞</div>
-                    <div class="contact-item-text">
-                        <h4>Phone</h4>
-                        <p><a href="tel:+17606030022" style="color: var(--text-light); text-decoration: none;">(760) 603-0022</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-item-icon">📧</div>
-                    <div class="contact-item-text">
-                        <h4>Email</h4>
-                        <p><a href="mailto:deanl.johnson@gmail.com" style="color: var(--text-light); text-decoration: none;">deanl.johnson@gmail.com</a></p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-item-icon">📍</div>
-                    <div class="contact-item-text">
-                        <h4>Office</h4>
-                        <p>Sonoma County, California<br>Serving all areas</p>
-                    </div>
-                </div>
-
-                <div style="margin-top: 2rem; padding: 1.5rem; background: var(--accent-light); border-radius: 4px;">
-                    <p style="color: var(--primary-dark); font-weight: 600; margin-bottom: 0.5rem;">Initial Consultation</p>
-                    <p style="color: var(--text-dark); font-size: 0.95rem;">Free 30-minute consultation to discuss your home search goals and our services. No obligation.</p>
+            <div class="contact-item">
+                <div class="contact-item-icon">📞</div>
+                <div class="contact-item-text">
+                    <h4>Phone</h4>
+                    <p><a href="tel:+17606030022" style="color: var(--text-light); text-decoration: none;">(760) 603-0022</a></p>
                 </div>
             </div>
 
-            <ContactForm />
+            <div class="contact-item">
+                <div class="contact-item-icon">📧</div>
+                <div class="contact-item-text">
+                    <h4>Email</h4>
+                    <p><a href="mailto:deanl.johnson@gmail.com" style="color: var(--text-light); text-decoration: none;">deanl.johnson@gmail.com</a></p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <div class="contact-item-icon">📍</div>
+                <div class="contact-item-text">
+                    <h4>Office</h4>
+                    <p>Sonoma County, California<br>Serving all areas</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--accent-light); border-radius: 4px;">
+                <p style="color: var(--primary-dark); font-weight: 600; margin-bottom: 0.5rem;">Initial Consultation</p>
+                <p style="color: var(--text-dark); font-size: 0.95rem;">Free 30-minute consultation to discuss your home search goals and our services. No obligation.</p>
+            </div>
         </div>
     </section>
 </BaseLayout>
