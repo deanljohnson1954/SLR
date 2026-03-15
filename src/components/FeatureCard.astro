@@ -1,0 +1,22 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  href?: string;
+}
+
+const { icon, title, description, href } = Astro.props;
+---
+
+<div class="feature-card">
+    <div class="feature-icon">{icon}</div>
+    <h3>
+        {href ? (
+            <a href={href} target="_blank" rel="noopener noreferrer">{title}</a>
+        ) : (
+            title
+        )}
+    </h3>
+    <p>{description}</p>
+</div>

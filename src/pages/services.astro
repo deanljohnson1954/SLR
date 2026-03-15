@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+---
+
+<BaseLayout title="Our Services | Sonoma Lawyers Realty" description="Comprehensive buyer representation with legal precision. Property search, contract negotiation, due diligence, and closing support at just 1% commission.">
+    <section style="margin-top: 120px;">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive buyer representation with legal precision.</p>
+
+        <div class="features">
+            <FeatureCard
+                icon="🔍"
+                title="Property Search"
+                description="Access to all MLS listings and off-market opportunities. We help you identify properties that meet your criteria and budget, with honest assessments of value and potential."
+            />
+            <FeatureCard
+                icon="📋"
+                title="Contract Negotiation"
+                description="Strategic offer preparation and negotiation. Our legal background ensures every term protects your interests, from price to contingencies to closing timeline."
+            />
+            <FeatureCard
+                icon="🔐"
+                title="Due Diligence"
+                description="Thorough review of inspections, disclosures, and title. We identify red flags and ensure you understand exactly what you're buying before you commit."
+            />
+            <FeatureCard
+                icon="📄"
+                title="Contract Review"
+                description="Line-by-line analysis of all purchase documents. We explain complex legal language in plain English and protect you from unfavorable terms or hidden obligations."
+            />
+            <FeatureCard
+                icon="🤝"
+                title="Closing Support"
+                description="Guidance through escrow, final walkthroughs, and closing. We coordinate with lenders, escrow officers, and sellers to ensure a smooth transaction from contract to keys."
+            />
+            <FeatureCard
+                icon="💡"
+                title="Market Analysis"
+                description="Data-driven insights on pricing, trends, and comparable sales. Make informed decisions backed by current market data and our deep local knowledge."
+            />
+        </div>
+
+        <div style="margin-top: 4rem; padding: 3rem; background: var(--white); border-radius: 4px; box-shadow: 0 4px 30px var(--shadow);">
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--primary); margin-bottom: 1.5rem;">What's Included</h3>
+            <ul style="list-style: none; color: var(--text-light); line-height: 2.2; font-size: 1.05rem;">
+                <li>✓ Full buyer representation throughout the transaction</li>
+                <li>✓ MLS access and property search assistance</li>
+                <li>✓ Property showings and area tours</li>
+                <li>✓ Comparative market analysis for each property</li>
+                <li>✓ Offer preparation and strategic negotiation</li>
+                <li>✓ Contract review and explanation</li>
+                <li>✓ Coordination with inspectors, lenders, and escrow</li>
+                <li>✓ Review of all disclosures and reports</li>
+                <li>✓ Guidance through contingency periods</li>
+                <li>✓ Final walkthrough coordination</li>
+                <li>✓ Closing assistance and documentation review</li>
+            </ul>
+        </div>
+    </section>
+</BaseLayout>

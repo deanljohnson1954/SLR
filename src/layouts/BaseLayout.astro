@@ -1,0 +1,201 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Sonoma Lawyers Realty | 1% Buyer's Agent Fee | Attorney-Owned Real Estate Services",
+  description = "Sonoma Lawyers Realty offers attorney-owned buyer representation at just 1% commission. Dean L. Johnson, M.B.A., J.D. provides decades of real estate law expertise in Sonoma County. Save thousands on your home purchase.",
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/services/", label: "Services" },
+  { href: "/about/", label: "About" },
+  { href: "/sonoma-county/", label: "Sonoma County" },
+  { href: "/research-tools/", label: "Research Tools" },
+  { href: "/contact/", label: "Contact" },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={description}>
+    <meta name="keywords" content="Sonoma County real estate, buyer's agent, 1% commission, attorney real estate broker, Dean L. Johnson, Healdsburg homes, Sonoma Valley properties, low commission buyer agent, real estate attorney, Sonoma wine country">
+    <meta name="author" content="Sonoma Lawyers Realty">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Sonoma Lawyers Realty | 1% Buyer's Agent Fee - Attorney-Owned">
+    <meta property="og:description" content="Save thousands with attorney-owned buyer representation at just 1% commission. Decades of real estate law expertise in Sonoma County.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.SonomaLawyersRealty.com">
+    <meta property="og:site_name" content="Sonoma Lawyers Realty">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sonoma Lawyers Realty | 1% Buyer's Agent Fee">
+    <meta name="twitter:description" content="Attorney-owned buyer representation at 1% commission in Sonoma County. Save thousands on your home purchase.">
+
+    <!-- Geo-targeting -->
+    <meta name="geo.region" content="US-CA">
+    <meta name="geo.placename" content="Sonoma County">
+    <meta name="geo.position" content="38.2921;-122.4580">
+    <meta name="ICBM" content="38.2921, -122.4580">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.SonomaLawyersRealty.com">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Sonoma Lawyers Realty",
+        "description": "Attorney-owned buyer representation at 1% commission in Sonoma County",
+        "url": "https://www.SonomaLawyersRealty.com",
+        "telephone": "(760) 603-0022",
+        "email": "deanL.johnson@gmail.com",
+        "areaServed": {
+            "@type": "State",
+            "name": "California",
+            "containsPlace": [
+                {"@type": "City", "name": "Healdsburg"},
+                {"@type": "City", "name": "Sonoma"},
+                {"@type": "City", "name": "Sebastopol"},
+                {"@type": "City", "name": "Santa Rosa"},
+                {"@type": "City", "name": "Petaluma"}
+            ]
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Dean L. Johnson",
+            "jobTitle": "Attorney & Real Estate Broker",
+            "honorificSuffix": "M.B.A., J.D."
+        },
+        "makesOffer": {
+            "@type": "Offer",
+            "description": "Buyer representation at 1% commission",
+            "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "1",
+                "priceCurrency": "USD",
+                "unitCode": "P1"
+            }
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the buyer's agent commission at Sonoma Lawyers Realty?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Sonoma Lawyers Realty charges a 1% buyer's agent commission, compared to the traditional 2.5-3% charged by most agents. On a $1 million home, this saves you up to $20,000."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What areas does Sonoma Lawyers Realty serve?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We serve all of Sonoma County, including Healdsburg, Sonoma, Sebastopol, Santa Rosa, Petaluma, and the Sonoma Coast."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Sonoma Lawyers Realty attorney-owned?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Dean L. Johnson, M.B.A., J.D., is both a licensed attorney and real estate broker with decades of real estate law experience."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style is:global>
+      @import '../styles/global.css';
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Sonoma Lawyers Realty</a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                {navLinks.map(link => (
+                    <li>
+                        <a
+                            href={link.href}
+                            class:list={[{ 'active-nav': currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
+                        >
+                            {link.label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </nav>
+
+    <slot />
+
+    <footer>
+        <p>&copy; 2026 Dean L. Johnson, Inc. dba Sonoma Lawyers Realty</p>
+        <p>Attorney & Real Estate Broker | Decades of Real Estate Law Experience</p>
+        <p style="margin-top: 0.5rem;"><a href="https://www.SonomaLawyersRealty.com" style="color: var(--accent); text-decoration: none;">www.SonomaLawyersRealty.com</a></p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Decades of real estate law experience | 1% buyer representation fee</p>
+    </footer>
+
+    <script>
+        // Hamburger toggle
+        const hamburger = document.getElementById('hamburger-btn');
+        const navLinks = document.getElementById('nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('open');
+                navLinks.classList.toggle('open');
+            });
+        }
+
+        // Intersection Observer for feature card entrance animations
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.feature-card').forEach(card => observer.observe(card));
+    </script>
+</body>
+</html>

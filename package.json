@@ -1,0 +1,17 @@
+{
+  "name": "slr",
+  "version": "1.0.0",
+  "description": "Sonoma Lawyers Realty",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@rollup/rollup-win32-ia32-msvc": "^4.59.0",
+    "astro": "^5.18.1"
+  }
+}

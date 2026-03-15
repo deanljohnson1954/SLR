@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GalleryItem from '../components/GalleryItem.astro';
+import AreaCard from '../components/AreaCard.astro';
+---
+
+<BaseLayout title="Sonoma County Living | Sonoma Lawyers Realty" description="Discover the beauty and lifestyle of Sonoma County wine country. Explore Healdsburg, Sonoma Valley, Petaluma, Sebastopol, Santa Rosa, and the Sonoma Coast.">
+    <section style="margin-top: 120px;">
+        <h2 class="section-title">Sonoma County Living</h2>
+        <p class="section-subtitle">Discover the beauty and lifestyle that awaits in California's premier wine country.</p>
+
+        <div class="gallery">
+            <GalleryItem
+                src="/photos/federico-sunset-field.jpg"
+                alt="Golden sunset over rolling fields in Sonoma County"
+                title="Golden Sunsets"
+                description="Breathtaking evenings over the countryside"
+            />
+            <GalleryItem
+                src="/photos/karol-rolling-hills.jpg"
+                alt="Rolling hills with farmhouse in Sonoma County"
+                title="Rolling Hills"
+                description="Picturesque landscapes at every turn"
+            />
+            <GalleryItem
+                src="/photos/jim-wine-cellar.jpg"
+                alt="Wine barrel cellar at a Sonoma County winery"
+                title="Wine Heritage"
+                description="World-class wineries and wine caves"
+            />
+            <GalleryItem
+                src="/photos/balloon-over-vineyard.jpg"
+                alt="Hot air balloon over vineyard in Sonoma County wine country"
+                title="Above the Vines"
+                description="Experience the magic of Sonoma from above"
+            />
+            <GalleryItem
+                src="/photos/tyke-mustard-vineyard.jpg"
+                alt="Vineyard rows with yellow mustard flowers in Sonoma County"
+                title="Mustard Season"
+                description="Wildflowers bloom between the vines each spring"
+            />
+            <GalleryItem
+                src="/photos/richard-vineyard-storm.jpg"
+                alt="Vineyard at dramatic stormy sunset in Sonoma County"
+                title="Dramatic Skies"
+                description="Storm clouds roll over Sonoma's rolling vineyards"
+            />
+            <GalleryItem
+                src="/photos/hari-vineyard-sunset.jpg"
+                alt="Vineyard at golden sunset in Sonoma County"
+                title="Harvest Season"
+                description="Golden light over the vines at day's end"
+            />
+            <GalleryItem
+                src="/photos/lisha-vineyard-cypress.jpg"
+                alt="Vineyard with cypress trees and mountains in Sonoma County"
+                title="Scenic Estates"
+                description="Cypress-lined lanes through California wine country"
+            />
+            <GalleryItem
+                src="/photos/ken-balloons-aerial.jpg"
+                alt="Multiple hot air balloons over Sonoma County wine country"
+                title="Above the Valley"
+                description="A fleet of balloons soaring over Sonoma's wine country"
+            />
+        </div>
+
+        <div style="margin-top: 4rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <AreaCard name="Healdsburg" description="Upscale town square, Michelin-starred restaurants, boutique wineries, and Russian River access. Premium real estate in the heart of wine country." />
+            <AreaCard name="Sonoma Valley" description="Historic plaza, walkable downtown, renowned wineries, and family-friendly neighborhoods. The birthplace of California wine." />
+            <AreaCard name="Petaluma" description="Victorian architecture, river town charm, excellent schools, and easy Bay Area access. More affordable entry point to Sonoma living." />
+            <AreaCard name="Sebastopol" description="Arts community, apple orchards, farmers markets, and eclectic downtown. Bohemian atmosphere meets wine country lifestyle." />
+            <AreaCard name="Santa Rosa" description="County seat with urban amenities, diverse neighborhoods, shopping, dining, and cultural venues. Central location for exploring the region." />
+            <AreaCard name="Sonoma Coast" description="Dramatic coastline, rugged beaches, cool climate wines, and stunning views. Peaceful retreat from wine country bustle." />
+        </div>
+    </section>
+</BaseLayout>

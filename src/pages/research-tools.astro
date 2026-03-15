@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FeatureCard from '../components/FeatureCard.astro';
+---
+
+<BaseLayout title="Research Tools | Sonoma Lawyers Realty" description="Essential resources for conducting due diligence when preparing an offer in Sonoma County. Parcel search, permits, well data, soil surveys, and more.">
+    <div class="hero" style="height: 40vh; min-height: 280px;">
+        <div class="hero-content">
+            <h1 style="color: var(--white); font-weight: 300;">Research Tools</h1>
+            <p>Essential resources for conducting due diligence when preparing an offer in Sonoma County.</p>
+        </div>
+    </div>
+
+    <section>
+        <p class="section-subtitle" style="max-width: 860px; margin: 0 auto 4rem;">
+            Making an appropriate offer requires understanding the legal, physical, and regulatory dimensions of a property.
+            The following tools allow buyers to conduct independent research on key factors that influence both the suitability
+            and the value of a property before committing to an offer price.
+        </p>
+
+        <div class="features">
+            <FeatureCard
+                icon="🗺️"
+                title="Parcel Search"
+                href="https://parcelsearch.permitsonoma.org/ParcelSearch"
+                description="Look up parcel records to verify ownership, lot size, assessor's parcel number (APN), and recorded information associated with a specific property. Confirming parcel boundaries and legal descriptions is a fundamental step before making any offer."
+            />
+            <FeatureCard
+                icon="📋"
+                title="Document Search"
+                href="https://permitsonoma.org/permitservices/permittools/documentsearch"
+                description="Access Sonoma County permit records and associated documents to review building permits, inspections, code enforcement actions, and unpermitted construction. Unpermitted work can create significant legal and financial liability for a buyer."
+            />
+            <FeatureCard
+                icon="💧"
+                title="Well Search"
+                href="https://dwr.maps.arcgis.com/apps/webappviewer/index.html?id=181078580a214c0986e2da28f8623b37"
+                description="For properties served by a private well, this tool provides access to well completion reports, location data, and water production records maintained by the California Department of Water Resources. Water availability and quality are critical legal and practical considerations."
+            />
+            <FeatureCard
+                icon="🌱"
+                title="Soil Search"
+                href="https://websoilsurvey.nrcs.usda.gov/app/WebSoilSurvey.aspx"
+                description="The USDA Web Soil Survey provides detailed soil composition data that is directly relevant to septic system feasibility, agricultural use potential, and structural suitability. Soil type can determine whether a parcel can lawfully support the intended use."
+            />
+            <FeatureCard
+                icon="🏠"
+                title="Vacation Rental"
+                href="https://sonomacounty.maps.arcgis.com/apps/webappviewer/index.html?id=12e72df6ffbf4f56946ff9986b1bb515"
+                description="Verify whether a property holds a valid vacation rental permit under Sonoma County regulations. Vacation rental rights are tied to the permit — not the property — and may not transfer with a sale. Understanding this before making an offer avoids costly misunderstandings about permitted uses."
+            />
+            <FeatureCard
+                icon="⚖️"
+                title="Public Trust Land"
+                href="https://sonomacounty.maps.arcgis.com/apps/webappviewer/index.html?id=8baedfd50be640b0b11548537f89fee2"
+                description="Identify whether any portion of a property is subject to the Public Trust Doctrine, which reserves certain lands — particularly those adjacent to navigable waters — for public use. Public trust encumbrances can significantly limit ownership rights and development potential."
+            />
+        </div>
+    </section>
+</BaseLayout>

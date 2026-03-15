@@ -1,0 +1,13 @@
+---
+interface Props {
+  name: string;
+  description: string;
+}
+
+const { name, description } = Astro.props;
+---
+
+<div style="background: var(--white); padding: 2.5rem; border-radius: 4px; box-shadow: 0 4px 30px var(--shadow);">
+    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem;">{name}</h3>
+    <p style="color: var(--text-light); line-height: 1.8;">{description}</p>
+</div>
