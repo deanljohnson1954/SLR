@@ -52,7 +52,13 @@
         var message = f.elements.namedItem('message').value;
         var subject = 'Consultation Request – ' + n;
         var body = 'Name: ' + n + '\nEmail: ' + email + '\nPhone: ' + phone + '\nTimeline: ' + timeline + '\n\nMessage:\n' + message;
-        window.location.href = 'mailto:deanl.johnson@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        var mailtoUrl = 'mailto:deanl.johnson@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        var a = document.createElement('a');
+        a.href = mailtoUrl;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
         document.getElementById('form-success').classList.add('show');
         f.reset();
     });
