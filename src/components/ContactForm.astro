@@ -41,23 +41,19 @@
     </div>
 </form>
 
-<script>
-    const form = document.getElementById('contact-form');
-    if (form) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formEl = event.target as HTMLFormElement;
-            const name = (formEl.elements.namedItem('name') as HTMLInputElement).value;
-            const email = (formEl.elements.namedItem('email') as HTMLInputElement).value;
-            const phone = (formEl.elements.namedItem('phone') as HTMLInputElement).value;
-            const timeline = (formEl.elements.namedItem('timeline') as HTMLSelectElement).value;
-            const message = (formEl.elements.namedItem('message') as HTMLTextAreaElement).value;
-            const subject = `Consultation Request – ${name}`;
-            const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nTimeline: ${timeline}\n\nMessage:\n${message}`;
-            window.open(`mailto:deanL.johnson@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
-            const successEl = document.getElementById('form-success');
-            if (successEl) successEl.classList.add('show');
-            formEl.reset();
-        });
-    }
+<script is:inline>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var f = event.target;
+        var n = f.elements.namedItem('name').value;
+        var email = f.elements.namedItem('email').value;
+        var phone = f.elements.namedItem('phone').value;
+        var timeline = f.elements.namedItem('timeline').value;
+        var message = f.elements.namedItem('message').value;
+        var subject = 'Consultation Request – ' + n;
+        var body = 'Name: ' + n + '\nEmail: ' + email + '\nPhone: ' + phone + '\nTimeline: ' + timeline + '\n\nMessage:\n' + message;
+        window.open('mailto:deanl.johnson@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body));
+        document.getElementById('form-success').classList.add('show');
+        f.reset();
+    });
 </script>
