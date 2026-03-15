@@ -1,5 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sonoma-lawyers-realty",
-  "pages_build_output_dir": "dist"
+  "compatibility_date": "2026-03-14",
+  "assets": {
+    "directory": "./dist"
+  }
 }

@@ -5,12 +5,16 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "deploy": "astro build && wrangler pages deploy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "astro": "^5.18.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
   }
 }
