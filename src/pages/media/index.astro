@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Buyer Resources & Articles | Sonoma Lawyers Realty"
+  description="Articles, guides, and legal insights for Sonoma County real estate buyers. Written by Dean L. Johnson, Attorney & Real Estate Broker at Sonoma Lawyers Realty."
+>
+  <section style="margin-top: 120px; padding-bottom: 6rem;">
+    <h1 class="section-title">Buyer Resources</h1>
+    <p class="section-subtitle" style="max-width: 100%;">Legal insights and practical guides for Sonoma County real estate buyers, written by an attorney who is also your broker.</p>
+
+    <div style="max-width: 900px; margin: 3rem auto; display: flex; flex-direction: column; gap: 2.5rem;">
+
+      <!-- Article Card: PTRA Well Ordinance -->
+      <article style="background: var(--white); border-radius: 4px; box-shadow: 0 4px 30px var(--shadow); overflow: hidden; display: grid; grid-template-columns: 1fr; border-left: 4px solid var(--accent);">
+        <div style="padding: 2.5rem;">
+          <p style="font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem;">Rural Land &amp; Agricultural Property</p>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem; line-height: 1.3;">
+            <a href="/media/ptra-well-ordinance-sonoma-county-buyers/" style="color: inherit; text-decoration: none; transition: color 0.2s;">
+              PTRA Well Ordinance: What Sonoma County Land Buyers Must Know
+            </a>
+          </h2>
+          <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
+            If you're buying rural land, a vineyard, or agricultural property in Sonoma County, there's a local ordinance most buyers — and even many agents — don't fully understand until it's too late. The Public Trust Review Area (PTRA) can be the difference between a productive property and one with severely constrained water rights.
+          </p>
+          <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
+            <a href="/media/ptra-well-ordinance-sonoma-county-buyers/" class="cta-button" style="display: inline-block; padding: 0.75rem 2rem; font-size: 0.9rem;">
+              Read Article
+            </a>
+            <span style="font-size: 0.85rem; color: var(--text-light);">By Dean L. Johnson, Attorney &amp; Real Estate Broker</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Placeholder for future articles -->
+      <div style="padding: 2rem; background: var(--cream); border-radius: 4px; border: 1px dashed var(--accent-light); text-align: center;">
+        <p style="color: var(--text-light); font-style: italic;">More articles coming soon. Check back for new buyer guides and legal insights.</p>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
