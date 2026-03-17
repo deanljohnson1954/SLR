@@ -24,4 +24,16 @@
     <loc>https://www.SonomaLawyersRealty.com/contact/</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://www.SonomaLawyersRealty.com/media/</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.SonomaLawyersRealty.com/media/ptra-well-ordinance-sonoma-county-buyers/</loc>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
