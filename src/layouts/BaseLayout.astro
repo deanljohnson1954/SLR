@@ -2,14 +2,19 @@
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
+  articleDate?: string;
 }
 
 const {
   title = "Sonoma Lawyers Realty | 1% Buyer's Agent Fee | Attorney-Owned Real Estate Services",
   description = "Sonoma Lawyers Realty offers attorney-owned buyer representation at just 1% commission. Dean L. Johnson, M.B.A., J.D. provides decades of real estate law expertise in Sonoma County. Save thousands on your home purchase.",
+  keywords,
+  articleDate,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
+const canonicalURL = `https://www.SonomaLawyersRealty.com${currentPath}`;
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -31,33 +36,35 @@ const navLinks = [
 
     <!-- SEO Meta Tags -->
     <meta name="description" content={description}>
-    <meta name="keywords" content="Sonoma County real estate, buyer's agent, 1% commission, attorney real estate broker, Dean L. Johnson, Healdsburg homes, Sonoma Valley properties, low commission buyer agent, real estate attorney, Sonoma wine country">
-    <meta name="author" content="Sonoma Lawyers Realty">
+    <meta name="keywords" content={keywords ?? "Sonoma County real estate, buyer's agent, 1% commission, attorney real estate broker, Dean L. Johnson, Healdsburg homes, Sonoma Valley properties, low commission buyer agent, real estate attorney, Sonoma wine country, AB 2992, BRBC, buyer broker agreement, California real estate law"}>
+    <meta name="author" content="Dean L. Johnson, Attorney & Real Estate Broker">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    <meta name="revisit-after" content="7 days">
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Sonoma Lawyers Realty | 1% Buyer's Agent Fee - Attorney-Owned">
-    <meta property="og:description" content="Save thousands with attorney-owned buyer representation at just 1% commission. Decades of real estate law expertise in Sonoma County.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.SonomaLawyersRealty.com">
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:type" content={articleDate ? "article" : "website"}>
+    <meta property="og:url" content={canonicalURL}>
     <meta property="og:site_name" content="Sonoma Lawyers Realty">
     <meta property="og:locale" content="en_US">
+    {articleDate && <meta property="article:published_time" content={articleDate}>}
+    {articleDate && <meta property="article:author" content="Dean L. Johnson">}
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sonoma Lawyers Realty | 1% Buyer's Agent Fee">
-    <meta name="twitter:description" content="Attorney-owned buyer representation at 1% commission in Sonoma County. Save thousands on your home purchase.">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
 
     <!-- Geo-targeting -->
     <meta name="geo.region" content="US-CA">
-    <meta name="geo.placename" content="Sonoma County">
+    <meta name="geo.placename" content="Sonoma County, California">
     <meta name="geo.position" content="38.2921;-122.4580">
     <meta name="ICBM" content="38.2921, -122.4580">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.SonomaLawyersRealty.com">
+    <!-- Canonical URL (unique per page — critical for SEO) -->
+    <link rel="canonical" href={canonicalURL}>
+    <link rel="sitemap" href="/sitemap.xml">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -136,6 +143,30 @@ const navLinks = [
         ]
     }
     </script>
+
+    <!-- Article Schema (for article pages) -->
+    {articleDate && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title,
+        "description": description,
+        "datePublished": articleDate,
+        "author": {
+          "@type": "Person",
+          "name": "Dean L. Johnson",
+          "jobTitle": "Attorney & Real Estate Broker",
+          "url": "https://www.SonomaLawyersRealty.com/about/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sonoma Lawyers Realty",
+          "url": "https://www.SonomaLawyersRealty.com"
+        },
+        "url": canonicalURL,
+        "mainEntityOfPage": canonicalURL
+      })} />
+    )}
 
     <style is:global>
       @import '../styles/global.css';
