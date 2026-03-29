@@ -71,46 +71,123 @@ const navLinks = [
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Structured Data -->
+    <!-- Schema: WebSite -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "RealEstateAgent",
+        "@type": "WebSite",
         "name": "Sonoma Lawyers Realty",
-        "description": "Attorney-owned buyer representation at 1% commission in Sonoma County",
+        "url": "https://www.sonomalawyersrealty.com",
+        "description": "Attorney-owned buyer representation at 1% commission in Sonoma County, California.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Sonoma Lawyers Realty"
+        }
+    }
+    </script>
+
+    <!-- Schema: LocalBusiness + RealEstateAgent -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": ["RealEstateAgent", "LocalBusiness"],
+        "name": "Sonoma Lawyers Realty",
+        "legalName": "Dean L. Johnson, Inc. dba Sonoma Lawyers Realty",
+        "description": "Attorney-owned buyer representation at 1% commission. Dean L. Johnson, M.B.A., J.D. provides expert legal guidance through every step of your Sonoma County home purchase.",
         "url": "https://www.sonomalawyersrealty.com",
         "telephone": "(760) 603-0022",
         "email": "deanl.johnson@gmail.com",
-        "areaServed": {
-            "@type": "State",
-            "name": "California",
-            "containsPlace": [
-                {"@type": "City", "name": "Healdsburg"},
-                {"@type": "City", "name": "Sonoma"},
-                {"@type": "City", "name": "Sebastopol"},
-                {"@type": "City", "name": "Santa Rosa"},
-                {"@type": "City", "name": "Petaluma"}
+        "priceRange": "1% commission",
+        "currenciesAccepted": "USD",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Healdsburg",
+            "addressRegion": "CA",
+            "postalCode": "95448",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 38.2921,
+            "longitude": -122.4580
+        },
+        "areaServed": [
+            {"@type": "City", "name": "Healdsburg", "sameAs": "https://en.wikipedia.org/wiki/Healdsburg,_California"},
+            {"@type": "City", "name": "Sonoma", "sameAs": "https://en.wikipedia.org/wiki/Sonoma,_California"},
+            {"@type": "City", "name": "Sebastopol", "sameAs": "https://en.wikipedia.org/wiki/Sebastopol,_California"},
+            {"@type": "City", "name": "Santa Rosa", "sameAs": "https://en.wikipedia.org/wiki/Santa_Rosa,_California"},
+            {"@type": "City", "name": "Petaluma", "sameAs": "https://en.wikipedia.org/wiki/Petaluma,_California"},
+            {"@type": "County", "name": "Sonoma County", "sameAs": "https://en.wikipedia.org/wiki/Sonoma_County,_California"}
+        ],
+        "serviceType": "Exclusive Buyer Representation",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Buyer Representation Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "name": "Exclusive Buyer Representation",
+                    "description": "Full buyer representation at 1% commission — property search, offer negotiation, due diligence, contract review, and closing support.",
+                    "price": "1",
+                    "priceCurrency": "USD",
+                    "priceSpecification": {
+                        "@type": "UnitPriceSpecification",
+                        "price": "1",
+                        "priceCurrency": "USD",
+                        "unitCode": "P1",
+                        "unitText": "percent of purchase price"
+                    }
+                }
             ]
         },
         "founder": {
             "@type": "Person",
             "name": "Dean L. Johnson",
             "jobTitle": "Attorney & Real Estate Broker",
-            "honorificSuffix": "M.B.A., J.D."
+            "honorificSuffix": "M.B.A., J.D.",
+            "url": "https://www.sonomalawyersrealty.com/about/",
+            "knowsAbout": ["Real Estate Law", "Contract Negotiation", "California Property Law", "Due Diligence", "Buyer Representation"]
         },
-        "makesOffer": {
-            "@type": "Offer",
-            "description": "Buyer representation at 1% commission",
-            "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "1",
-                "priceCurrency": "USD",
-                "unitCode": "P1"
-            }
-        }
+        "sameAs": [
+            "https://www.sonomalawyersrealty.com"
+        ]
     }
     </script>
 
+    <!-- Schema: Person (Dean L. Johnson) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dean L. Johnson",
+        "honorificSuffix": "M.B.A., J.D.",
+        "jobTitle": "Attorney & Real Estate Broker",
+        "description": "Attorney and real estate broker with decades of experience in California real estate law. Licensed before the U.S. Supreme Court.",
+        "url": "https://www.sonomalawyersrealty.com/about/",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Sonoma Lawyers Realty",
+            "url": "https://www.sonomalawyersrealty.com"
+        },
+        "knowsAbout": [
+            "California Real Estate Law",
+            "Buyer Representation",
+            "Contract Negotiation",
+            "Due Diligence",
+            "AB 2992",
+            "BRBC",
+            "Sonoma County Real Estate"
+        ],
+        "hasCredential": [
+            {"@type": "EducationalOccupationalCredential", "name": "Juris Doctor (J.D.)"},
+            {"@type": "EducationalOccupationalCredential", "name": "Master of Business Administration (M.B.A.)"},
+            {"@type": "EducationalOccupationalCredential", "name": "California Real Estate Broker License"},
+            {"@type": "EducationalOccupationalCredential", "name": "Admitted to Practice Before the U.S. Supreme Court"}
+        ]
+    }
+    </script>
+
+    <!-- Schema: FAQPage -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -121,15 +198,15 @@ const navLinks = [
                 "name": "What is the buyer's agent commission at Sonoma Lawyers Realty?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Sonoma Lawyers Realty charges a 1% buyer's agent commission, compared to the traditional 2.5-3% charged by most agents. On a $1 million home, this saves you up to $20,000."
+                    "text": "Sonoma Lawyers Realty charges a 1% buyer's agent commission, compared to the traditional 2.5–3% charged by most agents. On a $1 million home, that's up to $20,000 in savings."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What areas does Sonoma Lawyers Realty serve?",
+                "name": "What areas of Sonoma County does Sonoma Lawyers Realty serve?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We serve all of Sonoma County, including Healdsburg, Sonoma, Sebastopol, Santa Rosa, Petaluma, and the Sonoma Coast."
+                    "text": "We serve all of Sonoma County, including Healdsburg, Sonoma Valley, Sebastopol, Santa Rosa, Petaluma, and the Sonoma Coast."
                 }
             },
             {
@@ -137,10 +214,58 @@ const navLinks = [
                 "name": "Is Sonoma Lawyers Realty attorney-owned?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. Dean L. Johnson, M.B.A., J.D., is both a licensed attorney and real estate broker with decades of real estate law experience."
+                    "text": "Yes. Dean L. Johnson, M.B.A., J.D. is both a licensed attorney and California real estate broker with decades of real estate law experience."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does Sonoma Lawyers Realty represent sellers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Sonoma Lawyers Realty represents buyers exclusively and never takes listings or represents sellers, ensuring 100% loyalty to buyer clients with zero conflicts of interest."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does a buyer need to sign a BRBC before attending an open house in California?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Under California's AB 2992, a BRBC (Buyer Representation and Broker Compensation agreement) is only required when a broker is acting on behalf of a buyer. A seller's agent hosting an open house represents the seller, not the buyer, so no BRBC is required to attend an open house or any seller-agent showing."
                 }
             }
         ]
+    }
+    </script>
+
+    <!-- Schema: Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Exclusive Buyer Representation at 1% Commission",
+        "provider": {
+            "@type": "RealEstateAgent",
+            "name": "Sonoma Lawyers Realty",
+            "url": "https://www.sonomalawyersrealty.com"
+        },
+        "serviceType": "Real Estate Buyer Representation",
+        "areaServed": {
+            "@type": "County",
+            "name": "Sonoma County",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+        },
+        "description": "Full-service buyer representation including property search, offer preparation and negotiation, due diligence review, contract analysis, and closing support — all at 1% commission.",
+        "offers": {
+            "@type": "Offer",
+            "price": "1",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "1",
+                "unitText": "percent of purchase price"
+            }
+        }
     }
     </script>
 
