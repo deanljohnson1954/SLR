@@ -13,8 +13,8 @@ const {
   articleDate,
 } = Astro.props;
 
-const currentPath = Astro.url.pathname;
-const canonicalURL = `https://www.SonomaLawyersRealty.com${currentPath}`;
+const currentPath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
+const canonicalURL = `https://www.sonomalawyersrealty.com${currentPath}`;
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -78,7 +78,7 @@ const navLinks = [
         "@type": "RealEstateAgent",
         "name": "Sonoma Lawyers Realty",
         "description": "Attorney-owned buyer representation at 1% commission in Sonoma County",
-        "url": "https://www.SonomaLawyersRealty.com",
+        "url": "https://www.sonomalawyersrealty.com",
         "telephone": "(760) 603-0022",
         "email": "deanl.johnson@gmail.com",
         "areaServed": {
@@ -156,12 +156,12 @@ const navLinks = [
           "@type": "Person",
           "name": "Dean L. Johnson",
           "jobTitle": "Attorney & Real Estate Broker",
-          "url": "https://www.SonomaLawyersRealty.com/about/"
+          "url": "https://www.sonomalawyersrealty.com/about/"
         },
         "publisher": {
           "@type": "Organization",
           "name": "Sonoma Lawyers Realty",
-          "url": "https://www.SonomaLawyersRealty.com"
+          "url": "https://www.sonomalawyersrealty.com"
         },
         "url": canonicalURL,
         "mainEntityOfPage": canonicalURL
@@ -202,7 +202,7 @@ const navLinks = [
     <footer>
         <p>&copy; 2026 Dean L. Johnson, Inc. dba Sonoma Lawyers Realty</p>
         <p>Attorney & Real Estate Broker | Decades of Real Estate Law Experience</p>
-        <p style="margin-top: 0.5rem;"><a href="https://www.SonomaLawyersRealty.com" style="color: var(--accent); text-decoration: none;">www.SonomaLawyersRealty.com</a></p>
+        <p style="margin-top: 0.5rem;"><a href="https://www.sonomalawyersrealty.com" style="color: var(--accent); text-decoration: none;">www.SonomaLawyersRealty.com</a></p>
         <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">Decades of real estate law experience | 1% buyer representation fee</p>
     </footer>
 
