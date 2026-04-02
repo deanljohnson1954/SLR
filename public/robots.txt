@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Block crawling of the GitHub Pages mirror URL to prevent duplicate indexing
+User-agent: *
+Disallow: /SLR/
+
 Sitemap: https://www.sonomalawyersrealty.com/sitemap.xml
