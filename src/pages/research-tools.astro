@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+import MarketCalculator from '../components/MarketCalculator.astro';
 ---
 
 <BaseLayout title="Sonoma County Property Research Tools for Home Buyers" description="Essential resources for conducting due diligence when preparing an offer in Sonoma County. Parcel search, permits, well data, soil surveys, and more.">
@@ -56,5 +57,14 @@ import FeatureCard from '../components/FeatureCard.astro';
                 description="Identify whether any portion of a property is subject to the Public Trust Doctrine, which reserves certain lands — particularly those adjacent to navigable waters — for public use. Public trust encumbrances can significantly limit ownership rights and development potential."
             />
         </div>
+    </section>
+
+    <section style="background: var(--cream);">
+        <h2 class="section-title" style="text-align: center;">Market Calculator</h2>
+        <p class="section-subtitle" style="max-width: 860px; margin: 0 auto 3rem;">
+            Estimate a property's current market value based on its last sale price and the countywide
+            appreciation in Sonoma County home prices since that sale.
+        </p>
+        <MarketCalculator />
     </section>
 </BaseLayout>

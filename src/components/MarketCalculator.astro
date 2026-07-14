@@ -1,0 +1,177 @@
+---
+// Sonoma County, CA — FHFA All-Transactions House Price Index (annual, 1975 = earliest available)
+// Source: Federal Housing Finance Agency, series ATNHPIUS06097A, retrieved via FRED.
+const priceIndex: Record<number, number> = {
+    1975: 13.21, 1976: 15.52, 1977: 18.94, 1978: 22.75, 1979: 27.26,
+    1980: 31.33, 1981: 34.33, 1982: 33.09, 1983: 34.94, 1984: 35.93,
+    1985: 37.71, 1986: 39.17, 1987: 41.99, 1988: 47.98, 1989: 61.30,
+    1990: 68.06, 1991: 68.97, 1992: 68.40, 1993: 66.82, 1994: 66.26,
+    1995: 65.91, 1996: 65.90, 1997: 67.47, 1998: 72.09, 1999: 79.59,
+    2000: 100.00, 2001: 114.30, 2002: 121.49, 2003: 129.18, 2004: 149.30,
+    2005: 183.00, 2006: 189.78, 2007: 177.16, 2008: 147.36, 2009: 128.95,
+    2010: 123.08, 2011: 113.81, 2012: 113.40, 2013: 129.11, 2014: 150.81,
+    2015: 161.90, 2016: 176.44, 2017: 190.05, 2018: 206.37, 2019: 206.64,
+    2020: 207.12, 2021: 224.55, 2022: 248.05, 2023: 252.09, 2024: 258.12,
+    2025: 259.39,
+};
+
+const years = Object.keys(priceIndex).map(Number).sort((a, b) => b - a);
+const latestYear = years[0];
+---
+
+<div class="market-calculator">
+    <div class="calculator-intro">
+        <p>
+            Enter a property's last recorded sale price and the year of that sale. This tool applies the
+            year-over-year change in the <strong>FHFA House Price Index for Sonoma County</strong> to estimate
+            what that same property would be worth in today's market, based purely on countywide price
+            appreciation or depreciation since the last sale.
+        </p>
+    </div>
+
+    <form id="market-calc-form" class="calculator-form">
+        <div class="form-group">
+            <label for="sale-price">Last Sale Price ($)</label>
+            <input type="number" id="sale-price" name="sale-price" min="1" step="1" placeholder="e.g. 650000" required />
+        </div>
+        <div class="form-group">
+            <label for="sale-year">Year of Last Sale</label>
+            <select id="sale-year" name="sale-year" required>
+                <option value="" disabled selected>Select year</option>
+                {years.map((year) => (
+                    <option value={year}>{year}</option>
+                ))}
+            </select>
+        </div>
+        <button type="submit" class="submit-button">Calculate Current Value</button>
+    </form>
+
+    <div id="market-calc-result" class="calculator-result" hidden>
+        <div class="result-value">
+            <span class="result-label">Estimated Current Value</span>
+            <span class="result-amount" id="result-amount"></span>
+        </div>
+        <p class="result-detail" id="result-detail"></p>
+    </div>
+
+    <p class="calculator-disclaimer">
+        This estimate is based solely on the countywide FHFA House Price Index (1975–{latestYear}) and does not
+        account for property-specific factors such as renovations, condition, or neighborhood-level trends. It is
+        provided for general informational purposes only and is not an appraisal or a substitute for professional
+        valuation advice.
+    </p>
+</div>
+
+<script define:vars={{ priceIndex, latestYear }}>
+    const form = document.getElementById('market-calc-form');
+    const resultBox = document.getElementById('market-calc-result');
+    const resultAmount = document.getElementById('result-amount');
+    const resultDetail = document.getElementById('result-detail');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const salePrice = parseFloat(document.getElementById('sale-price').value);
+        const saleYear = parseInt(document.getElementById('sale-year').value, 10);
+
+        if (!salePrice || !saleYear || !priceIndex[saleYear]) {
+            return;
+        }
+
+        const factor = priceIndex[latestYear] / priceIndex[saleYear];
+        const currentValue = salePrice * factor;
+        const percentChange = (factor - 1) * 100;
+        const direction = percentChange >= 0 ? 'increase' : 'decrease';
+
+        resultAmount.textContent = currentValue.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0,
+        });
+
+        resultDetail.textContent =
+            `Sonoma County home prices have changed approximately ${Math.abs(percentChange).toFixed(1)}% ` +
+            `(${direction}) from ${saleYear} to ${latestYear}, per the FHFA House Price Index.`;
+
+        resultBox.hidden = false;
+    });
+</script>
+
+<style>
+    .market-calculator {
+        background: var(--white);
+        border-radius: 4px;
+        box-shadow: 0 4px 20px var(--shadow);
+        padding: 3rem;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
+    .calculator-intro p {
+        color: var(--text-light);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+    }
+
+    .calculator-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        gap: 1.5rem;
+        align-items: end;
+    }
+
+    .calculator-form .submit-button {
+        white-space: nowrap;
+        height: fit-content;
+    }
+
+    .calculator-result {
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 2px solid var(--accent);
+        text-align: center;
+    }
+
+    .result-value {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .result-label {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .result-amount {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+
+    .result-detail {
+        color: var(--text-light);
+        font-size: 0.95rem;
+    }
+
+    .calculator-disclaimer {
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        color: var(--text-light);
+        line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+        .market-calculator {
+            padding: 2rem 1.5rem;
+        }
+
+        .calculator-form {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
