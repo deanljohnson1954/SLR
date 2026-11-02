@@ -1,12 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const th = "background: var(--primary); color: var(--white); font-weight: 600; text-align: left; padding: 0.75rem 0.9rem; vertical-align: bottom;";
-const td = "padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--accent-light); vertical-align: top;";
+const th = "background: var(--primary); color: var(--white); font-weight: 600; text-align: left; padding: 0.6rem 0.45rem; vertical-align: bottom;";
+const td = "padding: 0.6rem 0.45rem; border-bottom: 1px solid var(--accent-light); vertical-align: top;";
 const tdNum = td + " text-align: right; white-space: nowrap;";
-const tdDate = td + " white-space: nowrap;";
-const tdAddr = td + " min-width: 150px;";
-const tdAvg = "padding: 0.75rem 0.9rem; font-weight: 700; color: var(--text-dark); background: var(--cream); border-top: 2px solid var(--accent);";
+const tdDate = td;
+const tdAddr = td;
+const tdAvg = "padding: 0.6rem 0.45rem; font-weight: 700; color: var(--text-dark); background: var(--cream); border-top: 2px solid var(--accent);";
 const tdAvgNum = tdAvg + " text-align: right; white-space: nowrap;";
 ---
 
@@ -63,8 +63,8 @@ const tdAvgNum = tdAvg + " text-align: right; white-space: nowrap;";
         The following four recent transactions clearly illustrate this pattern. The table below shows the original listing date, final sale date, total days on market, and the discount each buyer ultimately obtained.
       </p>
 
-      <div style="overflow-x: auto; margin-bottom: 1rem; border-radius: 4px; box-shadow: 0 4px 30px var(--shadow);">
-        <table style="width: 100%; min-width: 880px; border-collapse: collapse; font-size: 0.9rem; line-height: 1.5; background: var(--white);">
+      <div style="margin-bottom: 1rem; border-radius: 4px; box-shadow: 0 4px 30px var(--shadow);">
+        <table class="article-table" style="width: 100%; border-collapse: collapse; font-size: 0.8rem; line-height: 1.5; background: var(--white);">
           <thead>
             <tr>
               <th style={th}>Property Address</th>
@@ -79,54 +79,54 @@ const tdAvgNum = tdAvg + " text-align: right; white-space: nowrap;";
           </thead>
           <tbody>
             <tr>
-              <td style={tdAddr}>175 4th St E, Sonoma</td>
-              <td style={tdDate}>Jun. 5, 2023</td>
-              <td style={tdDate}>Aug. 1, 2025</td>
-              <td style={tdNum}>788</td>
-              <td style={tdNum}>$15,000,000</td>
-              <td style={tdNum}>$8,000,000</td>
-              <td style={tdNum}>−$7,000,000</td>
-              <td style={tdNum}>−46.7%</td>
+              <td data-label="Property Address" style={tdAddr}>175 4th St E, Sonoma</td>
+              <td data-label="Original List Date" style={tdDate}>Jun. 5, 2023</td>
+              <td data-label="Final Sale Date" style={tdDate}>Aug. 1, 2025</td>
+              <td data-label="Days on Market" style={tdNum}>788</td>
+              <td data-label="Original List Price" style={tdNum}>$15,000,000</td>
+              <td data-label="Sale Price" style={tdNum}>$8,000,000</td>
+              <td data-label="Discount ($)" style={tdNum}>−$7,000,000</td>
+              <td data-label="Discount (%)" style={tdNum}>−46.7%</td>
             </tr>
             <tr>
-              <td style={tdAddr}>301 1st St W, Sonoma</td>
-              <td style={tdDate}>Sep. 2, 2023</td>
-              <td style={tdDate}>Mar. 12, 2026</td>
-              <td style={tdNum}>922</td>
-              <td style={tdNum}>$7,995,000</td>
-              <td style={tdNum}>$3,750,000</td>
-              <td style={tdNum}>−$4,245,000</td>
-              <td style={tdNum}>−53.1%</td>
+              <td data-label="Property Address" style={tdAddr}>301 1st St W, Sonoma</td>
+              <td data-label="Original List Date" style={tdDate}>Sep. 2, 2023</td>
+              <td data-label="Final Sale Date" style={tdDate}>Mar. 12, 2026</td>
+              <td data-label="Days on Market" style={tdNum}>922</td>
+              <td data-label="Original List Price" style={tdNum}>$7,995,000</td>
+              <td data-label="Sale Price" style={tdNum}>$3,750,000</td>
+              <td data-label="Discount ($)" style={tdNum}>−$4,245,000</td>
+              <td data-label="Discount (%)" style={tdNum}>−53.1%</td>
             </tr>
             <tr>
-              <td style={tdAddr}>18000 Gehricke Rd, Sonoma</td>
-              <td style={tdDate}>Aug. 9, 2021</td>
-              <td style={tdDate}>Apr. 1, 2026</td>
-              <td style={tdNum}>1,696</td>
-              <td style={tdNum}>$19,500,000</td>
-              <td style={tdNum}>$7,100,000</td>
-              <td style={tdNum}>−$12,400,000</td>
-              <td style={tdNum}>−63.6%</td>
+              <td data-label="Property Address" style={tdAddr}>18000 Gehricke Rd, Sonoma</td>
+              <td data-label="Original List Date" style={tdDate}>Aug. 9, 2021</td>
+              <td data-label="Final Sale Date" style={tdDate}>Apr. 1, 2026</td>
+              <td data-label="Days on Market" style={tdNum}>1,696</td>
+              <td data-label="Original List Price" style={tdNum}>$19,500,000</td>
+              <td data-label="Sale Price" style={tdNum}>$7,100,000</td>
+              <td data-label="Discount ($)" style={tdNum}>−$12,400,000</td>
+              <td data-label="Discount (%)" style={tdNum}>−63.6%</td>
             </tr>
             <tr>
-              <td style={tdAddr}>11080 Franz Valley Rd, Calistoga</td>
-              <td style={tdDate}>Jun. 27, 2019</td>
-              <td style={tdDate}>Dec. 8, 2025</td>
-              <td style={tdNum}>2,356</td>
-              <td style={tdNum}>$19,950,000</td>
-              <td style={tdNum}>$5,500,000</td>
-              <td style={tdNum}>−$14,450,000</td>
-              <td style={tdNum}>−72.4%</td>
+              <td data-label="Property Address" style={tdAddr}>11080 Franz Valley Rd, Calistoga</td>
+              <td data-label="Original List Date" style={tdDate}>Jun. 27, 2019</td>
+              <td data-label="Final Sale Date" style={tdDate}>Dec. 8, 2025</td>
+              <td data-label="Days on Market" style={tdNum}>2,356</td>
+              <td data-label="Original List Price" style={tdNum}>$19,950,000</td>
+              <td data-label="Sale Price" style={tdNum}>$5,500,000</td>
+              <td data-label="Discount ($)" style={tdNum}>−$14,450,000</td>
+              <td data-label="Discount (%)" style={tdNum}>−72.4%</td>
             </tr>
             <tr>
-              <td style={tdAvg}>Average</td>
-              <td style={tdAvg}>—</td>
-              <td style={tdAvg}>—</td>
-              <td style={tdAvgNum}>1,441</td>
-              <td style={tdAvgNum}>—</td>
-              <td style={tdAvgNum}>—</td>
-              <td style={tdAvgNum}>−$9,523,750</td>
-              <td style={tdAvgNum}>−59.0%</td>
+              <td data-label="" style={tdAvg}>Average</td>
+              <td class="avg-blank" data-label="Original List Date" style={tdAvg}>—</td>
+              <td class="avg-blank" data-label="Final Sale Date" style={tdAvg}>—</td>
+              <td data-label="Days on Market" style={tdAvgNum}>1,441</td>
+              <td class="avg-blank" data-label="Original List Price" style={tdAvgNum}>—</td>
+              <td class="avg-blank" data-label="Sale Price" style={tdAvgNum}>—</td>
+              <td data-label="Discount ($)" style={tdAvgNum}>−$9,523,750</td>
+              <td data-label="Discount (%)" style={tdAvgNum}>−59.0%</td>
             </tr>
           </tbody>
         </table>
@@ -181,8 +181,8 @@ const tdAvgNum = tdAvg + " text-align: right; white-space: nowrap;";
         Land value in Sonoma County varies enormously based on what the land can actually produce. The following ranges reflect current Sonoma County market conditions, listed from lowest to highest value per usable acre:
       </p>
 
-      <div style="overflow-x: auto; margin-bottom: 1rem; border-radius: 4px; box-shadow: 0 4px 30px var(--shadow);">
-        <table style="width: 100%; min-width: 600px; border-collapse: collapse; font-size: 0.9rem; line-height: 1.5; background: var(--white);">
+      <div style="margin-bottom: 1rem; border-radius: 4px; box-shadow: 0 4px 30px var(--shadow);">
+        <table class="article-table" style="width: 100%; border-collapse: collapse; font-size: 0.85rem; line-height: 1.5; background: var(--white);">
           <thead>
             <tr>
               <th style={th}>Land Category</th>
@@ -192,34 +192,34 @@ const tdAvgNum = tdAvg + " text-align: right; white-space: nowrap;";
           </thead>
           <tbody>
             <tr>
-              <td style={td}>Unusable / encumbered land</td>
-              <td style={td + " white-space: nowrap;"}>$1,000 – $7,500</td>
-              <td style={td}>Steep terrain, riparian areas, setbacks; may contribute no value</td>
+              <td data-label="Land Category" style={td}>Unusable / encumbered land</td>
+              <td data-label="Value per Usable Acre" style={td + " white-space: nowrap;"}>$1,000 – $7,500</td>
+              <td data-label="Key Conditions" style={td}>Steep terrain, riparian areas, setbacks; may contribute no value</td>
             </tr>
             <tr>
-              <td style={td}>Usable, unplantable land</td>
-              <td style={td + " white-space: nowrap;"}>$10,000 – $30,000</td>
-              <td style={td}>Suitable for grazing or recreation; no well or limited water</td>
+              <td data-label="Land Category" style={td}>Usable, unplantable land</td>
+              <td data-label="Value per Usable Acre" style={td + " white-space: nowrap;"}>$10,000 – $30,000</td>
+              <td data-label="Key Conditions" style={td}>Suitable for grazing or recreation; no well or limited water</td>
             </tr>
             <tr>
-              <td style={td}>Usable land, suitable for planting</td>
-              <td style={td + " white-space: nowrap;"}>$20,000 – $30,000</td>
-              <td style={td}>Based on 31 farms currently listed for sale in Sonoma County MLS, averaging $24,950/acre (LandSearch, 2025)</td>
+              <td data-label="Land Category" style={td}>Usable land, suitable for planting</td>
+              <td data-label="Value per Usable Acre" style={td + " white-space: nowrap;"}>$20,000 – $30,000</td>
+              <td data-label="Key Conditions" style={td}>Based on 31 farms currently listed for sale in Sonoma County MLS, averaging $24,950/acre (LandSearch, 2025)</td>
             </tr>
             <tr>
-              <td style={td}>Plantable bare land (no vines, irrigation confirmed)</td>
-              <td style={td + " white-space: nowrap;"}>$30,000 – $60,000</td>
-              <td style={td}>Water available; no significant development constraints</td>
+              <td data-label="Land Category" style={td}>Plantable bare land (no vines, irrigation confirmed)</td>
+              <td data-label="Value per Usable Acre" style={td + " white-space: nowrap;"}>$30,000 – $60,000</td>
+              <td data-label="Key Conditions" style={td}>Water available; no significant development constraints</td>
             </tr>
             <tr>
-              <td style={td}>Planted vineyard (established, irrigated, avg. market)</td>
-              <td style={td + " white-space: nowrap;"}>$65,000 – $110,000</td>
-              <td style={td}>Good established vines, irrigation in place, water confirmed</td>
+              <td data-label="Land Category" style={td}>Planted vineyard (established, irrigated, avg. market)</td>
+              <td data-label="Value per Usable Acre" style={td + " white-space: nowrap;"}>$65,000 – $110,000</td>
+              <td data-label="Key Conditions" style={td}>Good established vines, irrigation in place, water confirmed</td>
             </tr>
             <tr>
-              <td style={td}>Established planted vineyard (strong appellation)</td>
-              <td style={td + " white-space: nowrap;"}>$65,000 – $200,000</td>
-              <td style={td}>Marketable variety, intact infrastructure; lower end for weak markets or rootstock problems</td>
+              <td data-label="Land Category" style={td}>Established planted vineyard (strong appellation)</td>
+              <td data-label="Value per Usable Acre" style={td + " white-space: nowrap;"}>$65,000 – $200,000</td>
+              <td data-label="Key Conditions" style={td}>Marketable variety, intact infrastructure; lower end for weak markets or rootstock problems</td>
             </tr>
           </tbody>
         </table>
@@ -289,3 +289,16 @@ const tdAvgNum = tdAvg + " text-align: right; white-space: nowrap;";
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  @media (max-width: 700px) {
+    .article-table, .article-table tbody, .article-table tr, .article-table td { display: block; width: 100%; }
+    .article-table thead { display: none; }
+    .article-table tr { border-bottom: 2px solid var(--accent); padding: 0.5rem 0; }
+    .article-table td { display: flex !important; justify-content: space-between; gap: 1rem; text-align: right !important; white-space: normal !important; border: none !important; padding: 0.3rem 0.9rem !important; }
+    .article-table td::before { content: attr(data-label); font-weight: 600; color: var(--primary); text-align: left; flex-shrink: 0; max-width: 50%; }
+    .article-table .avg-blank { display: none !important; }
+    .article-table td:first-child { font-weight: 700; color: var(--text-dark); }
+  }
+</style>
+
