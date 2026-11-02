@@ -1,0 +1,291 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const th = "background: var(--primary); color: var(--white); font-weight: 600; text-align: left; padding: 0.75rem 0.9rem; vertical-align: bottom;";
+const td = "padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--accent-light); vertical-align: top;";
+const tdNum = td + " text-align: right; white-space: nowrap;";
+const tdDate = td + " white-space: nowrap;";
+const tdAddr = td + " min-width: 150px;";
+const tdAvg = "padding: 0.75rem 0.9rem; font-weight: 700; color: var(--text-dark); background: var(--cream); border-top: 2px solid var(--accent);";
+const tdAvgNum = tdAvg + " text-align: right; white-space: nowrap;";
+---
+
+<BaseLayout
+  title="How Smart Buyers Take Advantage of Overpriced Sonoma Listings | Sonoma Lawyers Realty"
+  description="Why Sonoma County is full of overpriced listings, four case studies of luxury homes that sold for 47–72% below their original asking price, and how buyers can build a valuation case that wins."
+  keywords="overpriced listings, Sonoma County real estate, buying a listing, days on market, price reductions, comparative market analysis, Sonoma land values, vineyard value per acre, PTRA, Williamson Act, buyer's agent, Sonoma County buyer representation"
+  articleDate="2026-11-01"
+>
+  <article style="margin-top: 120px; max-width: 800px; margin-left: auto; margin-right: auto; padding: 0 2rem 6rem;">
+
+    <nav aria-label="Breadcrumb" style="margin-top: 120px; margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-light);">
+      <a href="/" style="color: var(--accent); text-decoration: none;">Home</a>
+      <span style="margin: 0 0.5rem;">/</span>
+      <a href="/media/" style="color: var(--accent); text-decoration: none;">Articles</a>
+      <span style="margin: 0 0.5rem;">/</span>
+      <span>How Smart Buyers Take Advantage of Overpriced Sonoma Listings</span>
+    </nav>
+
+    <p style="font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;">Market Analysis &amp; Pricing</p>
+
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 2.8rem); color: var(--primary); line-height: 1.25; margin-bottom: 1.25rem;">
+      How Smart Buyers Take Advantage of Overpriced Sonoma Listings
+    </h1>
+
+    <p style="font-size: 0.95rem; color: var(--text-light); font-style: italic; margin-bottom: 2.5rem; padding-bottom: 2rem; border-bottom: 1px solid var(--accent-light);">
+      By Dean L. Johnson, Attorney &amp; Real Estate Broker | Sonoma Lawyers Realty
+    </p>
+
+    <div style="color: var(--text-light); line-height: 1.9; font-size: 1.05rem;">
+      <hr style="border: none; border-top: 1px solid var(--accent-light); margin-bottom: 2.5rem;">
+
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem;">The Root Cause: “Buying a Listing”</h2>
+      <p style="margin-bottom: 1.5rem;">
+        To understand why Sonoma County’s market is systematically plagued by overpriced listings you have to start with the economics of the real estate agent business itself. It begins with an industry structure that actively rewards agents for telling sellers exactly what they want to hear.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        The industry has a name for this practice: buying a listing. An agent “buys” a listing by agreeing with an inflated asking price in order to win the listing agreement over competing agents who might have delivered an honest valuation.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        What makes the practice so persistent is that the economics of listing virtually guarantee it will continue. Consider what it actually costs an agent to put a high-end property on the market: professional photography, perhaps a video walkthrough or website, an MLS entry, and some digital marketing. All in, a well-presented listing might cost the agent $1,000 to $1,500 out of pocket and perhaps 30–40 hours of time. That is the entirety of the downside risk.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        Once that investment is made, the listing can sit on the market for months — or years — at essentially no additional cost to the agent. The carrying cost of an overpriced listing is close to zero. The potential upside, if the property ever sells, is a commission in the hundreds of thousands of dollars.
+      </p>
+      <p style="margin-bottom: 2.5rem;">
+        This structural dynamic is not going to change. As a result, the Sonoma real estate market will continue to be littered with aspirationally priced properties that sit for years and eventually sell at a fraction of their original ask. The actual data shows that this is happening all the time in Sonoma County.
+      </p>
+
+      <hr style="border: none; border-top: 1px solid var(--accent-light); margin-bottom: 2.5rem;">
+
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem;">Four Case Studies from Sonoma County</h2>
+      <p style="margin-bottom: 1.5rem;">
+        The following four recent transactions clearly illustrate this pattern. The table below shows the original listing date, final sale date, total days on market, and the discount each buyer ultimately obtained.
+      </p>
+
+      <div style="overflow-x: auto; margin-bottom: 1rem; border-radius: 4px; box-shadow: 0 4px 30px var(--shadow);">
+        <table style="width: 100%; min-width: 880px; border-collapse: collapse; font-size: 0.9rem; line-height: 1.5; background: var(--white);">
+          <thead>
+            <tr>
+              <th style={th}>Property Address</th>
+              <th style={th}>Original List Date</th>
+              <th style={th}>Final Sale Date</th>
+              <th style={th + " text-align: right;"}>Days on Market</th>
+              <th style={th + " text-align: right;"}>Original List Price</th>
+              <th style={th + " text-align: right;"}>Sale Price</th>
+              <th style={th + " text-align: right;"}>Discount ($)</th>
+              <th style={th + " text-align: right;"}>Discount (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style={tdAddr}>175 4th St E, Sonoma</td>
+              <td style={tdDate}>Jun. 5, 2023</td>
+              <td style={tdDate}>Aug. 1, 2025</td>
+              <td style={tdNum}>788</td>
+              <td style={tdNum}>$15,000,000</td>
+              <td style={tdNum}>$8,000,000</td>
+              <td style={tdNum}>−$7,000,000</td>
+              <td style={tdNum}>−46.7%</td>
+            </tr>
+            <tr>
+              <td style={tdAddr}>301 1st St W, Sonoma</td>
+              <td style={tdDate}>Sep. 2, 2023</td>
+              <td style={tdDate}>Mar. 12, 2026</td>
+              <td style={tdNum}>922</td>
+              <td style={tdNum}>$7,995,000</td>
+              <td style={tdNum}>$3,750,000</td>
+              <td style={tdNum}>−$4,245,000</td>
+              <td style={tdNum}>−53.1%</td>
+            </tr>
+            <tr>
+              <td style={tdAddr}>18000 Gehricke Rd, Sonoma</td>
+              <td style={tdDate}>Aug. 9, 2021</td>
+              <td style={tdDate}>Apr. 1, 2026</td>
+              <td style={tdNum}>1,696</td>
+              <td style={tdNum}>$19,500,000</td>
+              <td style={tdNum}>$7,100,000</td>
+              <td style={tdNum}>−$12,400,000</td>
+              <td style={tdNum}>−63.6%</td>
+            </tr>
+            <tr>
+              <td style={tdAddr}>11080 Franz Valley Rd, Calistoga</td>
+              <td style={tdDate}>Jun. 27, 2019</td>
+              <td style={tdDate}>Dec. 8, 2025</td>
+              <td style={tdNum}>2,356</td>
+              <td style={tdNum}>$19,950,000</td>
+              <td style={tdNum}>$5,500,000</td>
+              <td style={tdNum}>−$14,450,000</td>
+              <td style={tdNum}>−72.4%</td>
+            </tr>
+            <tr>
+              <td style={tdAvg}>Average</td>
+              <td style={tdAvg}>—</td>
+              <td style={tdAvg}>—</td>
+              <td style={tdAvgNum}>1,441</td>
+              <td style={tdAvgNum}>—</td>
+              <td style={tdAvgNum}>—</td>
+              <td style={tdAvgNum}>−$9,523,750</td>
+              <td style={tdAvgNum}>−59.0%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 2.5rem;">
+        Note: All listing and sale dates are confirmed. Days on market are calculated from original list date to closing date. Average days on market and average discount are calculated across all four transactions. Source for 11080 Franz Valley Rd: <a href="https://www.redfin.com/CA/Calistoga/11080-Franz-Valley-Rd-94515/home/167144178" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Redfin</a>.
+      </p>
+
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--primary); margin-bottom: 0.75rem;">175 4th Street East: The $7 Million Mirage</h3>
+      <p style="margin-bottom: 2rem;">
+        This historic Sonoma property was listed on June 5, 2023, at $15,000,000 — a number that placed it among the most expensive residential listings in the county’s recent history. It sat on the market for 788 days before closing on August 1, 2025, at $8,000,000. That is a $7 million discount, representing a 46.7% reduction from the original ask.
+      </p>
+
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--primary); margin-bottom: 0.75rem;">301 1st Street West: The Most Dramatic Discount</h3>
+      <p style="margin-bottom: 2rem;">
+        This property in the heart of Sonoma was listed on September 2, 2023, at $7,995,000. It sat on the market for 922 days before selling on March 12, 2026, at $3,750,000. That is a $4,245,000 discount — a 53.1% reduction.
+      </p>
+
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--primary); margin-bottom: 0.75rem;">18000 Gehricke Road: Nearly Five Years and a 63.6% Discount</h3>
+      <p style="margin-bottom: 2rem;">
+        This Sonoma Valley estate came to market on August 9, 2021, at $19,500,000. It sat — through multiple price reductions — for nearly five years before finally closing on April 1, 2026, at $7,100,000. That is a $12,400,000 reduction from the original asking price, representing a discount of 63.6%, and 1,696 days on market.
+      </p>
+
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--primary); margin-bottom: 0.75rem;">11080 Franz Valley Road, Calistoga: Six Years and a 72.4% Discount</h3>
+      <p style="margin-bottom: 1.5rem;">
+        This Calistoga-area property first appeared on the market on June 27, 2019, priced at $19,950,000. It sat for six and a half years — through shifting market conditions, the COVID-19 pandemic, and rising interest rates — before finally closing on December 8, 2025, at $5,500,000. The discount from the original asking price was <strong style="color: var(--text-dark);">$14,450,000 — a reduction of 72.4%.</strong>
+      </p>
+      <p style="margin-bottom: 2.5rem;">
+        At 2,356 days on market, this is the most prolonged example in this analysis and illustrates in stark terms the carrying risk that overpriced listings impose — not on the agent, but on the seller. Six years of ownership costs, property taxes, insurance, and maintenance, compounded by the opportunity cost of capital tied up in a property that the market had already told the seller was worth far less than the asking price.
+      </p>
+
+      <hr style="border: none; border-top: 1px solid var(--accent-light); margin-bottom: 2.5rem;">
+
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem;">The Importance of Providing the Seller with a Comprehensive Market Analysis</h2>
+      <p style="margin-bottom: 2.5rem;">
+        The key to successfully competing in this type of market is to provide the seller with a comprehensive analysis that persuades the seller that your price is not a number picked out of the air, but the logical conclusion of the facts. Such an analysis requires an in-depth study of the value of the structures and the land, and an understanding of the other factors that can affect value.
+      </p>
+
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--primary); margin-bottom: 0.75rem;">Value of the Structures</h3>
+      <p style="margin-bottom: 1.5rem;">
+        This should be based on closed sales of similar properties in the area over the past six to 12 months, or a slightly longer period of time if the market is thinly traded. In this analysis, the core metric is price per square foot.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        If you cannot find properties that are of a similar age, adjustments will be necessary. This is because newly constructed homes often sell at a premium and will easily command a higher price per square foot than one built 20, 30, or 50 years ago.
+      </p>
+      <p style="margin-bottom: 2.5rem;">
+        Also, only permitted square footage counts. Sonoma County has a well-documented history of unpermitted construction — additions, guest houses, studios, and barn conversions built without permits or with permits that were never finaled. Unpermitted square footage should not be included in this analysis.
+      </p>
+
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--primary); margin-bottom: 0.75rem;">Valuing the Land</h3>
+      <p style="margin-bottom: 1.5rem;">
+        Land value in Sonoma County varies enormously based on what the land can actually produce. The following ranges reflect current Sonoma County market conditions, listed from lowest to highest value per usable acre:
+      </p>
+
+      <div style="overflow-x: auto; margin-bottom: 1rem; border-radius: 4px; box-shadow: 0 4px 30px var(--shadow);">
+        <table style="width: 100%; min-width: 600px; border-collapse: collapse; font-size: 0.9rem; line-height: 1.5; background: var(--white);">
+          <thead>
+            <tr>
+              <th style={th}>Land Category</th>
+              <th style={th}>Value per Usable Acre</th>
+              <th style={th}>Key Conditions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style={td}>Unusable / encumbered land</td>
+              <td style={td + " white-space: nowrap;"}>$1,000 – $7,500</td>
+              <td style={td}>Steep terrain, riparian areas, setbacks; may contribute no value</td>
+            </tr>
+            <tr>
+              <td style={td}>Usable, unplantable land</td>
+              <td style={td + " white-space: nowrap;"}>$10,000 – $30,000</td>
+              <td style={td}>Suitable for grazing or recreation; no well or limited water</td>
+            </tr>
+            <tr>
+              <td style={td}>Usable land, suitable for planting</td>
+              <td style={td + " white-space: nowrap;"}>$20,000 – $30,000</td>
+              <td style={td}>Based on 31 farms currently listed for sale in Sonoma County MLS, averaging $24,950/acre (LandSearch, 2025)</td>
+            </tr>
+            <tr>
+              <td style={td}>Plantable bare land (no vines, irrigation confirmed)</td>
+              <td style={td + " white-space: nowrap;"}>$30,000 – $60,000</td>
+              <td style={td}>Water available; no significant development constraints</td>
+            </tr>
+            <tr>
+              <td style={td}>Planted vineyard (established, irrigated, avg. market)</td>
+              <td style={td + " white-space: nowrap;"}>$65,000 – $110,000</td>
+              <td style={td}>Good established vines, irrigation in place, water confirmed</td>
+            </tr>
+            <tr>
+              <td style={td}>Established planted vineyard (strong appellation)</td>
+              <td style={td + " white-space: nowrap;"}>$65,000 – $200,000</td>
+              <td style={td}>Marketable variety, intact infrastructure; lower end for weak markets or rootstock problems</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size: 0.9rem; font-style: italic; margin-bottom: 2rem;">
+        Table 2: Approximate Per-Acre Land Values, Sonoma County (current market)
+      </p>
+
+      <p style="margin-bottom: 1.5rem;">
+        For agricultural purposes, only usable acreage should be counted — setbacks imposed by ponds, roads, riparian corridors, and easements must be subtracted before any per-acre value is applied. Also, water capacity imposes a further constraint. For example, a drip-irrigated Carneros vineyard typically requires 5 to 6 gallons per minute per acre at peak demand, which means that a 20 gallon per minute well can reliably support at most only 3 to 4 irrigated acres.
+      </p>
+      <p style="margin-bottom: 2.5rem;">
+        Also, subdivision value should not be included or considered when valuing land. A buyer who paid a premium for subdivision potential would be paying today for a process that could take 3 to 7 or more years, could cost $130,000 to $500,000 or more in out-of-pocket expenditures before a single parcel is sold, and could ultimately be denied.
+      </p>
+
+      <hr style="border: none; border-top: 1px solid var(--accent-light); margin-bottom: 2.5rem;">
+
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem;">Other Issues That Should Be Considered</h2>
+      <p style="margin-bottom: 1.5rem;">
+        A complete valuation of a Sonoma County property must account for a range of issues that go beyond comparable sales. Many involve local ordinances, zoning rules, and regulatory processes that are worth understanding before making an offer.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: var(--text-dark);">Is the property within the Public Trust Review Area?</strong> If agriculture is planned, it is very important to determine whether the parcel falls within Sonoma County’s Public Trust Review Area (PTRA). Under the PTRA, every new well requires full discretionary review, a 30-day public comment period, and is subject to outright denial. A well application carries an initial non-refundable deposit of $5,568, but the total cost may be significantly higher because the applicant must pay the full cost of the entire review process. It is also important to do a long-duration (24-hour) flow test to measure an existing well’s capacity, sustainable yield, and potential impact on nearby water sources.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: var(--text-dark);">Is the property in a homeowner’s association?</strong> If so, what does the HOA restrict? Many buyers discover after closing that an HOA limits uses they had planned — agricultural activities, short-term rentals, accessory structures, or exterior modifications. What are the annual HOA dues? Are there pending special assessments? Is the HOA financially solvent?
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: var(--text-dark);">How is the property accessed?</strong> Is it located on a public road or a private road? If access is via a private road, who owns that road? Is there a recorded easement granting the right to use it — and is that easement adequate for the intended use? Private road owners may impose restrictions on traffic, maintenance obligations, and emergency access. Uncertain or contested road access can materially affect both value and usability.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: var(--text-dark);">What does the title report reveal?</strong> The preliminary title report discloses recorded easements, deed restrictions, and encumbrances that can significantly affect how a property may be used and what it is worth. Unrecorded easements, longstanding neighbor uses, and claims of adverse possession may also require review and can materially affect value in ways that a comparable sales analysis will not reveal.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: var(--text-dark);">Are development representations supported by the record?</strong> Representations about development potential — additional home sites, winery entitlements, agricultural uses — should be verified.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: var(--text-dark);">Is the property subject to a Williamson Act contract?</strong> The Williamson Act allows landowners to enter into contracts with local governments to restrict land to agricultural use in exchange for reduced property tax assessments. These contracts run for a minimum of ten years and renew automatically unless a notice of non-renewal is filed. A property under a Williamson Act contract cannot be developed for non-agricultural purposes during the contract term. Buyers should verify whether the property is enrolled and understand the restrictions and the timeline for any non-renewal before making an offer.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: var(--text-dark);">Are all structures on the property legally permitted?</strong> Unpermitted structures should be excluded from the valuation entirely. They may not be viewed as legally permissible for vacation rentals, financing may not be available on properties with unpermitted improvements, and Sonoma County may require their demolition.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        <strong style="color: var(--text-dark);">Does a transferable vacation rental permit actually exist?</strong> If rental income is part of the seller’s price justification, verify independently that a transferable permit exists and is in good standing. In many Sonoma County jurisdictions, vacation rental permits do not transfer automatically on sale. Also, vacation rentals are completely barred in many areas of Sonoma County.
+      </p>
+      <p style="margin-bottom: 2.5rem;">
+        <strong style="color: var(--text-dark);">What will fire insurance actually cost?</strong> A property in a high or very high fire hazard severity zone may face very large annual premiums or may be uninsurable through conventional markets. Hence, insurance quotes should be obtained before an offer is made so that this item can be properly factored into the offering price.
+      </p>
+
+      <hr style="border: none; border-top: 1px solid var(--accent-light); margin-bottom: 2.5rem;">
+
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem;">Conclusion: The Market Rewards the Prepared</h2>
+      <p style="margin-bottom: 1.5rem;">
+        The four transactions examined in this article share a common thread: sellers who listed at prices the market could not support, and buyers who — eventually — paid what the market actually said the properties were worth. That outcome does not happen by accident. It happens because buyers — and their advisors — do the work. They gather the comparable sales. They build the valuation case. They make offers grounded in data rather than emotion. And when a seller is ready to stop waiting for the fictional buyer who will pay the fictional price, a prepared buyer is there with a credible number and the documentation to support it.
+      </p>
+      <p style="margin-bottom: 2.5rem;">
+        Sonoma County’s market is one of the most beautiful and complex real estate environments in California. It is also one of the most systematically mispriced. For buyers who are willing to invest in real market analysis, that mispricing is not a problem. It is an advantage.
+      </p>
+
+      <p style="font-style: italic; font-weight: 600; color: var(--primary); margin-bottom: 0.5rem;">
+        Thinking about buying a home in Sonoma County? Contact Sonoma Lawyers Realty for a consultation at <a href="/" style="color: var(--accent); text-decoration: none;">SonomaLawyersRealty.com</a>. We offer a fair and balanced buyer-broker agreement at 1% commission — and we represent you exclusively, never sellers.
+      </p>
+      <p style="font-size: 0.9rem; color: var(--text-light); font-style: italic;">
+        Sonoma Lawyers Realty — Exclusive Buyer Representation at 1% Commission | sonomalawyersrealty.com
+      </p>
+
+    </div>
+  </article>
+</BaseLayout>
